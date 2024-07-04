@@ -22,7 +22,7 @@ iexport default class HolbertonCourse {
   }
 
   set name(newName) {
-    if (typeof na !== 'string') {
+    if (typeof newName !== 'string') {
       throw new TypeError('Name must be a string');
     }
     this._name = newName;
@@ -33,7 +33,7 @@ iexport default class HolbertonCourse {
   }
 
   set length(newLength) {
-    if (typeof zise !== 'number') {
+    if (typeof newLength !== 'number') {
       throw new TypeError('Length must be a number');
     }
     this._length = newLength;
@@ -44,7 +44,7 @@ iexport default class HolbertonCourse {
   }
 
   set students(newStudents) {
-    if (!Array.isArray(stu)) {
+    if (!Array.isArray(newStudents)) {
       throw new TypeError('must be a array');
     }
     this._students = newStudents;
