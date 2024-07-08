@@ -1,15 +1,11 @@
-export default function cleanSet(set, startString) {
-  const result = [];
-
-  // Iterate through the set's values
-  for (const value of set) {
-    // Check if the value starts with the specified startString
-    if (startString.trim() !== '' && value.startsWith(startString)) {
-      // Append the rest of the string after the startString to the result array
-      result.push(value.slice(startString.length));
-    }
+const cleanSet = (set, startString) => {
+  if (startString === undefined || startString.length === 0) {
+    return '';
   }
-  return result.join('-');
+  return [...set]
+    .filter((parametro) => (parametro !== undefined ? parametro.startsWith(startString) : ''))
+    .map((parametro) => (parametro !== undefined ? parametro.slice(startString.length) : ''))
+    .join('-');
+};
 
-  // Join the resulting strings with "-"
-}
+export default cleanSet;
